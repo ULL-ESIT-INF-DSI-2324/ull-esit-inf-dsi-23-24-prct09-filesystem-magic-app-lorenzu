@@ -4,8 +4,7 @@ En esta práctica, exploramos la implementación de una aplicación de línea de
 
 
 # Carta.ts
-
-´´´
+```
 import * as fs from 'fs';
 import chalk from 'chalk';
 
@@ -106,7 +105,7 @@ export function Mostrarporpantalla(data: string): void {
   }
   console.log('Valor de mercado:', carta.valor_mercado);
 }
-´´´
+```
 El código proporciona una estructura básica para trabajar con cartas de un juego de mesa, definiendo sus atributos y funciones útiles para gestionar una colección de cartas.
 
 ## Enumeraciones
