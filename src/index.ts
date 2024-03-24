@@ -1,10 +1,12 @@
-import { Carta, ColecciondeCartas, Color, Tipo, Rareza } from "./Carta.js";
+import { Carta, Color, Tipo, Rareza } from './Carta.js';
+import {  ColecciondeCartas } from "./ColecciondeCartas.js";
+
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 
 const NuevaColeccion = new ColecciondeCartas;
 
-
+// Agregar cartas por linea de comandos
 yargs(hideBin(process.argv))
   .command('add', 'Agrega una carta a la coleccion', {
   usuario: {
@@ -114,7 +116,7 @@ yargs(hideBin(process.argv))
  .argv;
 
 
-
+// elimina cartas por linea de comandos
  yargs(hideBin(process.argv))
   .command('remove', 'elimina una carta de la coleccion', {
   usuario: {
@@ -134,7 +136,7 @@ yargs(hideBin(process.argv))
  })
  .help()
  .argv;
-
+// Lista cartas por linea de comandos
  yargs(hideBin(process.argv))
  .command('list', 'lista las cartas de una coleccion', {
  usuario: {
@@ -150,6 +152,7 @@ yargs(hideBin(process.argv))
 .help()
 .argv;
 
+// Muestra cartas por linea de comandos
 yargs(hideBin(process.argv))
 .command('read', 'muestra una carta de la coleccion', {
 usuario: {
@@ -169,6 +172,8 @@ NuevaColeccion.mostrarcarta(argv.usuario, argv.id);
 })
 .help()
 .argv;
+
+// Modifica cartas por linea de comandos
 
 yargs(hideBin(process.argv))
   .command('update', 'Actualiza una carta de la coleccion', {
