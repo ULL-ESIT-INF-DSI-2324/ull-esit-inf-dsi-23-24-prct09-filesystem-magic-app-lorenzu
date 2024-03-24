@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import chalk from 'chalk';
 
 //Clase de Cartas Magic
-enum Tipo {
+export enum Tipo {
   Tierra = "Tierra",
   Criatura = "Criatura",
   Encantamiento = "Encantamiento",
@@ -12,7 +12,7 @@ enum Tipo {
   Planeswalker = "Planeswalker"
 }
 
-enum Color {
+export enum Color {
   Blanco = "Blanco",
   Azul = "Azul",
   Negro = "Negro",
@@ -23,7 +23,7 @@ enum Color {
 }
 
 
-enum Rareza {
+export enum Rareza {
   Comun = "Común",
   Infrecuente = "Infrecuente",
   Rara = "Rara",
@@ -31,7 +31,7 @@ enum Rareza {
 }
 
 
-interface Carta {
+export interface Carta {
   id: number;
   nombre: string;
   mana: number;
@@ -46,7 +46,7 @@ interface Carta {
 }
 
 
-function checkUserDirectory(usuario: string): string {
+export function checkUserDirectory(usuario: string): string {
   const userDirectory = `./cartas/${usuario}/`;
   if(!fs.existsSync(userDirectory)){
     //fs.mkdirSync(userDirectory, {recursive: true});
@@ -55,8 +55,9 @@ function checkUserDirectory(usuario: string): string {
   return userDirectory;
 }
 
-function Mostrarporpantalla(data: string){
+export function Mostrarporpantalla(data: string){
   const carta = JSON.parse(data);
+  console.log('-------------------------------------------------------');
   console.log('Contenido de la carta:');
   console.log('ID:', carta.id);
   console.log('Nombre:', carta.nombre);
@@ -97,10 +98,11 @@ function Mostrarporpantalla(data: string){
 
   }
   console.log('Valor de mercado:', carta.valor_mercado);
+  
 }
 
 
-class ColecciondeCartas {
+export class ColecciondeCartas {
   public coleccion: Carta[]; //Una colección de cartas para los usuarios
 
   constructor(){
@@ -120,9 +122,9 @@ class ColecciondeCartas {
     console.log(chalk.green(`Carta agregada a la colección de ${usuario}`));
   }
 
-  public eliminarcarta(usuario: string, carta: Carta): void {
+  public eliminarcarta(usuario: string, id: number): void {
     const userDirectory = checkUserDirectory(usuario);
-    const filePath = userDirectory + carta.id + '.json';
+    const filePath = userDirectory + id + '.json';
     if(fs.existsSync(filePath)){
       fs.unlinkSync(filePath);
       console.log(chalk.green(`Carta eliminada de la colección de ${usuario}`))
@@ -206,9 +208,5 @@ const nuevaCarta3: Carta = {
   valor_mercado: 10000
 }
 
-NuevaColeccion.modificarcarta("loren", nuevaCarta);
-NuevaColeccion.mostrarcarta("loren", 3);
-NuevaColeccion.modificarcarta("pepe", nuevaCarta);
-NuevaColeccion.listarcartas("loren")
 
 
