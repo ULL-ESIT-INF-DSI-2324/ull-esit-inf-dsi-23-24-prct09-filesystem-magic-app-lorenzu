@@ -9,9 +9,7 @@ En esta práctica, exploramos la implementación de una aplicación de línea de
 import * as fs from 'fs';
 import chalk from 'chalk';
 
-/**
- * Enumeración que define los posibles tipos de carta.
- */
+
 export enum Tipo {
   Tierra = "Tierra",
   Criatura = "Criatura",
@@ -22,9 +20,6 @@ export enum Tipo {
   Planeswalker = "Planeswalker"
 }
 
-/**
- * Enumeración que define los posibles colores de una carta.
- */
 export enum Color {
   Blanco = "Blanco",
   Azul = "Azul",
@@ -35,9 +30,7 @@ export enum Color {
   Multicolor = "Multicolor"
 }
 
-/**
- * Enumeración que define las posibles rarezas de una carta.
- */
+
 export enum Rareza {
   Comun = "Común",
   Infrecuente = "Infrecuente",
@@ -45,9 +38,7 @@ export enum Rareza {
   Mitica = "Mítica"
 }
 
-/**
- * Interfaz que define la estructura de una carta.
- */
+
 export interface Carta {
   id: number;
   nombre: string;
@@ -62,11 +53,7 @@ export interface Carta {
   valor_mercado: number;
 }
 
-/**
- * Función que verifica si existe el directorio de usuario y lo devuelve.
- * @param usuario Nombre del usuario.
- * @returns Ruta del directorio del usuario.
- */
+
 export function checkUserDirectory(usuario: string): string {
   const userDirectory = `./cartas/${usuario}/`;
   if(!fs.existsSync(userDirectory)){
@@ -76,10 +63,7 @@ export function checkUserDirectory(usuario: string): string {
   return userDirectory;
 }
 
-/**
- * Función que muestra por pantalla la información de una carta.
- * @param data Datos de la carta en formato JSON.
- */
+
 export function Mostrarporpantalla(data: string): void {
   const carta = JSON.parse(data);
   console.log('-------------------------------------------------------');
@@ -122,6 +106,7 @@ export function Mostrarporpantalla(data: string): void {
   }
   console.log('Valor de mercado:', carta.valor_mercado);
 }
+
 
 
 ´´´
