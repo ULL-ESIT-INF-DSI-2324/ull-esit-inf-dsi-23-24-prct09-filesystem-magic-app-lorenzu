@@ -175,38 +175,40 @@ export class ColecciondeCartas {
 
 const NuevaColeccion = new ColecciondeCartas;
 
-const nuevaCarta: Carta = {
-  id: 3,
-  nombre: "Rubiales",
-  mana: 30,
+const nuevaCarta1: Carta = {
+  id: 1,
+  nombre: "Black Lotus",
+  mana: 0,
   color: "Incoloro" as Color,
   tipo: "Artefacto" as Tipo,
   rareza: "Mítica" as Rareza,
-  reglas: "Un pikito <3",
-  valor_mercado: 10000
-}
+  reglas: "Puedes sacrificar el Black Lotus para añadir tres manás de cualquier color.",
+  valor_mercado: 100000
+};
 
 const nuevaCarta2: Carta = {
-  id: 4,
-  nombre: "Rubiales",
-  mana: 30,
-  color: "Incoloro" as Color,
-  tipo: "Artefacto" as Tipo,
-  rareza: "Mítica" as Rareza,
-  reglas: "Un pikito <3",
-  valor_mercado: 10000
-}
+  id: 2,
+  nombre: "Lightning Bolt",
+  mana: 1,
+  color: "Rojo" as Color,
+  tipo: "Conjuro" as Tipo,
+  rareza: "Común" as Rareza,
+  reglas: "Lightning Bolt hace 3 puntos de daño a cualquier objetivo.",
+  valor_mercado: 1
+};
 
 const nuevaCarta3: Carta = {
   id: 3,
-  nombre: "Pepesin",
-  mana: 30,
-  color: "Incoloro" as Color,
-  tipo: "Artefacto" as Tipo,
+  nombre: "Jace, the Mind Sculptor",
+  mana: 4,
+  color: "Azul" as Color,
+  tipo: "Planeswalker" as Tipo,
   rareza: "Mítica" as Rareza,
-  reglas: "Un pikito <3",
-  valor_mercado: 10000
-}
+  reglas: "+2: Miras las tres primeras cartas de la biblioteca de un oponente, y las pones en cualquier orden.\n-1: Regresas la carta objetivo a la mano de su propietario.\n-12: Exilias todas las cartas en la mano y en la biblioteca de un oponente, y ganas 7 vidas por cada carta exiliada de esta manera.",
+  lealtad: 3,
+  valor_mercado: 80
+};
+
 
 
 
